@@ -1,3 +1,62 @@
 {% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body %}
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="breadcrumb-hero">
+    <div class="container">
+      <div class="breadcrumb-hero">
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ol>
+      <li><a href="/">الرئيسية</a></li>
+      <li>{{ page.title }}</li>
+    </ol>
+  </div>
+</section><!-- End Breadcrumbs -->
 
-{% load wagtailcore_tags %}
+
+<!-- ======= Blog Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+
+      <div class="col-lg-12 entries">
+        {% for post in page.get_posts %}
+        <article class="entry">
+
+          <div class="entry-img">
+            {% if post.header_image %}
+            {% image post.header_image original as header_image %}
+            <a href="{% pageurl post %}" class="d-block">
+              <img src="{{ header_image.url }}" alt="" class="img-fluid"></img>
+            </a>
+            {% endif %}
+          </div>
+
+          <h2 class="entry-title">
+            <a href="{% pageurl post %}">{{ post.title }}</a>
+          </h2>
+
+          <div class="entry-content">
+            <p>{{ post.description }}</p>
+            <div class="read-more">
+              <a href="{% pageurl post %}">المزيد...</a>
+            </div>
+          </div>
+
+        </article><!-- End blog entry -->
+        {% endfor %}
+
+      </div><!-- End blog entries list -->
+
+    </div>
+
+  </div>
+</section><!-- End Blog Section -->
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body %}
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="breadcrumb-hero">
+    <div class="container">
+      <div class="breadcrumb-hero">
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ol>
+      <li><a href="/">الرئيسية</a></li>
+      <li><a href="{{ page.get_parent.url }}">{{ page.get_parent.title }}</a></li>
+      <li>{{ page.title }}</li>
+    </ol>
+  </div>
+</section><!-- End Breadcrumbs -->
+
+<!-- ======= Blog Single Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+
+      <div class="col-lg-10 entries mx-auto">
+
+        <article class="entry entry-single">
+
+          {% if page.header_image %}
+          {% image page.header_image original as header_image %}
+            <div class="entry-img">
+              <img src="{{ header_image.url }}" alt="" class="img-fluid">
+            </div>
+          {% endif %}
+          <h2 class="entry-title">
+            <a href=""{% pageurl page %}">{{ page.title }}</a>
+          </h2>
+
+          <div class="entry-content">
+            {{ page.body|richtext }}
+          </div>
+
+          <div class="entry-footer">
+            <i class="bi bi-folder"></i>
+            <ul class="cats">
+              <li><a href="#">Business</a></li>
+            </ul>
+
+            <i class="bi bi-tags"></i>
+            <ul class="tags">
+              <li><a href="#">Creative</a></li>
+              <li><a href="#">Tips</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </div>
+
+        </article><!-- End blog entry -->
+
+
+      </div><!-- End blog entries list -->
+
+    </div>
+
+  </div>
+</section><!-- End Blog Single Section -->
+
+{% endblock %}
