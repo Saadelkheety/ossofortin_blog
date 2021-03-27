@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailroutablepage_tags wagtailimages_tags %}
 {% block body %}
 <!-- ======= Breadcrumbs ======= -->
 <section id="breadcrumbs" class="breadcrumbs">
@@ -45,17 +45,24 @@
           </div>
 
           <div class="entry-footer">
-            <i class="bi bi-folder"></i>
-            <ul class="cats">
-              <li><a href="#">Business</a></li>
-            </ul>
-
-            <i class="bi bi-tags"></i>
-            <ul class="tags">
-              <li><a href="#">Creative</a></li>
-              <li><a href="#">Tips</a></li>
-              <li><a href="#">Marketing</a></li>
-            </ul>
+            {% with categories=page.categories.all %}
+            {% if categories %}
+              <i class="bi bi-folder"></i>
+              <ul class="cats">
+                {% for category in categories %}
+                <li><a href="{% routablepageurl blog_page 'post_by_category' category.slug %}">{{ category.name }}</a></li>
+                 {% endfor %}
+              </ul>
+            {% endif %}
+            {% endwith %}
+            {% if page.tags.all.count %}
+              <i class="bi bi-tags"></i>
+              <ul class="tags">
+                {% for tag in page.tags.all %}
+                  <li><a href="{% routablepageurl blog_page 'post_by_tag' tag.slug %}">{{ tag }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </div>
 
         </article><!-- End blog entry -->
@@ -64,8 +71,29 @@
       </div><!-- End blog entries list -->
 
     </div>
+    <div class="mt-5 mb-5" id="disqus_thread" dir="ltr"></div>
+        <script>
 
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://ehsasak-neama.com{% pageurl page %}";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "{% pageurl page %}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ehsasak-neama.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
+
 </section><!-- End Blog Single Section -->
 
 {% endblock %}
