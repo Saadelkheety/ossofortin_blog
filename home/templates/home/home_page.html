@@ -1,21 +1,87 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block body %}
+<!-- ======= Hero Section ======= -->
+<div id="hero" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#hero" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner hero-container">
+    <div class="carousel-item active">
+      <img src="{% static 'img/hero-bg.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h1>أهلًا بك مع أوسوفورتين Ossofortin</h1>
+        <h2>أوسوفورتين أقراص تحتوي على فيتامين د2 –إرجوكالسيفيرول- لعلاج وللحماية من نقص فيتامين د. </h2>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/hero-bg.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h2>
+          فيتامين د أو فيتامين الشمس ضروري لبناء العظام، والأسنان، وصحة الجهاز المناعي، والصحة النفسية.
+        </h2>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/hero-bg.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h2>
+          يرتبط نقص فيتامين د بتكرار العدوى، وآلام العظام، والشعور بالإرهاق وتقلبات الحالة المزاجية.
+        </h2>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- End Hero -->
 
-{% block body_class %}template-homepage{% endblock %}
+<!-- ======= Blog Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
 
-{% block extra_css %}
+    <div class="row">
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
+      <div class="col-lg-12 entries">
+        {% for post in page.latest_news %}
+        <article class="entry">
 
-{% block content %}
+          <div class="entry-img">
+            {% if post.header_image %}
+            {% image post.header_image original as header_image %}
+            <a href="{% pageurl post %}" class="d-block">
+              <img src="{{ header_image.url }}" alt="" class="img-fluid"></img>
+            </a>
+            {% endif %}
+          </div>
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+          <h2 class="entry-title">
+            <a href="{% pageurl post %}">{{ post.title }}</a>
+          </h2>
 
-{% endblock content %}
+          <div class="entry-content">
+            <p>{{ post.description }}</p>
+            <div class="read-more">
+              <a href="{% pageurl post %}">المزيد...</a>
+            </div>
+          </div>
+
+        </article><!-- End blog entry -->
+        {% endfor %}
+
+      </div><!-- End blog entries list -->
+
+    </div>
+
+  </div>
+</section><!-- End Blog Section -->
+
+{% endblock %}

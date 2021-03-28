@@ -50,10 +50,10 @@ class BlogIndexPage(RoutablePageMixin, Page):
         self.posts = self.get_posts().filter(categories__slug=category)
         return Page.serve(self, request, *args, **kwargs)
 
-    # @route(r'^$')
-    # def post_list(self, request, *args, **kwargs):
-    #     self.posts = self.get_posts()
-    #     return Page.serve(self, request, *args, **kwargs)
+    @route(r'^$')
+    def post_list(self, request, *args, **kwargs):
+        self.posts = self.get_posts()
+        return Page.serve(self, request, *args, **kwargs)
 
     # @route(r'^(\d{4})/$')
     # @route(r'^(\d{4})/(\d{2})/$')

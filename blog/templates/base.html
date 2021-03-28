@@ -38,7 +38,6 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
   {% block extra_css %}
-  Developed by Saad Elkheety
   {% endblock %}
 
 </head>
@@ -57,29 +56,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="/">الرئيسية</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="team.html">Team</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-
-          <li><a class="getstarted" href="about.html">Get Started</a></li>
+          <li><a href="/">الرئيسية</a></li>
+          <li><a href="/latest-news">آخر الأخبار</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -88,9 +66,7 @@
   </header><!-- End Header -->
 
 
-  <main id="main">
     {% block body %}{% endblock %}
-  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -107,15 +83,16 @@
           </div>
 
 
-          <div class="col-lg-6 col-md-6 footer-contact" dir="ltr">
-            <h4>Contact Us</h4>
+          <div class="col-lg-6 col-md-6 footer-contact">
+            <h4>تواصل معنا</h4>
             <p>
-              Armanious Group Tower,
-              9 El Sharekat Street,
-              Opera – Abdeen, Cairo, Egypt <br>
-              <strong>Phone:</strong> (+202) 239 92700 ||
-              <strong>Fax:</strong> (+202) 239 92771 ||
-              <strong>Hot line :</strong> 19790<br>
+              برج مجموعة أرمانيوس
+              9 شارع الشركات
+              الاوبرا – عبديين ، القاهرة ، مصر.
+              <br>
+              <strong>تليفون:</strong> <span dir="ltr"> (+202) 239 92700</span>||
+              <strong>فاكس: </strong> <span dir="ltr">(+202) 239 92771 </span>||
+              <strong>الخط الساخن :</strong> <span dir="ltr">19790</span><br>
             </p>
 
             <div class="social-links d-flex justify-content-center">
