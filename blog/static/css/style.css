@@ -539,19 +539,11 @@ section {
   color: #8b9578;
 }
 
-.about .content {
-  font-size: 15px;
-}
 
 .about .content h3 {
   font-weight: 700;
   font-size: 24px;
   color: #3c4133;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
 }
 
 .about .content ul li {
@@ -768,10 +760,10 @@ section {
   font-size: 26px;
 }
 
-.work-process .content ul {
+/* .work-process .content ul {
   list-style: none;
   padding: 0;
-}
+} */
 
 .work-process .content ul li {
   padding-bottom: 10px;
