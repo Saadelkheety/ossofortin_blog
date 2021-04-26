@@ -887,7 +887,7 @@ section {
   padding: 160px 20px 20px 20px;
   position: relative;
   width: 100%;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
