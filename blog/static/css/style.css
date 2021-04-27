@@ -335,6 +335,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 1;
   margin-top: 70px;
+  height: 75vh;
 }
 
 #hero:before {
@@ -413,6 +414,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+.carousel-item {
+  background-position: center !important;
+  background-size: cover !important;
+  height: 75vh;
 }
 /*--------------------------------------------------------------
 # Sections General
