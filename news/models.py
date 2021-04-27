@@ -33,7 +33,7 @@ class BlogIndexPage(RoutablePageMixin, Page):
         # Get all posts
         all_posts = self.posts
         # Paginate all posts by 2 per page
-        paginator = Paginator(all_posts, 2)
+        paginator = Paginator(all_posts, 5)
         # Try to get the ?page=x value
         page = request.GET.get("page")
         try:
