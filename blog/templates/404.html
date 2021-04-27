@@ -3,9 +3,17 @@
 {% block body_class %}template-404{% endblock %}
 
 {% block body %}
-<main id="main">
-  <h1>Page not found</h1>
+<main id="main" dir="ltr">
+  <section id="cta" class="cta">
+      <div class="container aos-init aos-animate" data-aos="fade-in">
 
-  <h2>Sorry, this page could not be found.</h2>
+        <div class="text-center">
+          <h1>Page not found</h1>
+
+          <h2>Sorry, this page could not be found.</h2>
+        </div>
+
+      </div>
+    </section>
 </main>
 {% endblock %}
