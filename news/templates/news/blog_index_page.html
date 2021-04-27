@@ -27,7 +27,7 @@
     <div class="row">
 
       <div class="col-lg-12 entries">
-        {% for post in page.get_posts %}
+        {% for post in posts %}
         <article class="entry">
 
           <div class="entry-img">
@@ -54,6 +54,15 @@
         {% endfor %}
 
       </div><!-- End blog entries list -->
+      {% if posts.paginator.num_pages > 1 %}
+      <div class="blog-pagination">
+        <ul class="justify-content-center">
+          {% for page_num in posts.paginator.page_range %}
+          <li class="{% if page_num == posts.number %} active{% endif %}"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
 
     </div>
 
