@@ -336,6 +336,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   margin-top: 70px;
   height: 75vh;
+  margin-bottom: -100px;
 }
 
 #hero:before {
@@ -520,9 +521,15 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.services .container {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  background: #fff;
+}
 .about .container {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
+  padding-top: 15px;
   background: #fff;
 }
 
@@ -778,6 +785,7 @@ section {
   line-height: 24px;
   margin-bottom: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Work Process
