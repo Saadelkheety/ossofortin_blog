@@ -4,13 +4,22 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+}
+
+thead {
+  border-width: 1px;
+  padding: 5px;
+  margin: 1px;
+}
+
+.blog section{
+  padding-bottom: 15px;
 }
 
 a {
@@ -147,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 
-.navbar a:hover, .navbar .active, .navbar li:hover > a {
+.navbar a:hover, .navbar .active, .navbar li:hover>a {
   color: #f8aa38;
 }
 
@@ -193,11 +202,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 
-.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover>a {
   color: #f8aa38;
 }
 
-.navbar .dropdown:hover > ul {
+.navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -209,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover > ul {
+.navbar .dropdown .dropdown:hover>ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -220,7 +229,8 @@ h1, h2, h3, h4, h5, h6 {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
-  .navbar .dropdown .dropdown:hover > ul {
+
+  .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
@@ -245,6 +255,7 @@ h1, h2, h3, h4, h5, h6 {
   .mobile-nav-toggle {
     display: block;
   }
+
   .navbar ul {
     display: none;
   }
@@ -287,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #3c4133;
 }
 
-.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover>a {
   color: #f8aa38;
 }
 
@@ -319,11 +330,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 
-.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover>a {
   color: #f8aa38;
 }
 
-.navbar-mobile .dropdown > .dropdown-active {
+.navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
 
@@ -407,6 +418,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   text-align: center;
 }
+
 .carousel-item {
   position: absolute;
   background-position: center !important;
@@ -425,13 +437,16 @@ h1, h2, h3, h4, h5, h6 {
   #hero {
     height: 100vh;
   }
+
   .carousel-item {
     height: 100vh;
   }
+
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
+
   #hero h2 {
     font-size: 22px;
     line-height: 24px;
@@ -440,11 +455,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   @media (max-height: 500px) {
-  #hero {
-    height: 120vh;
+    #hero {
+      height: 120vh;
+    }
   }
 }
-}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -508,11 +524,11 @@ section {
   margin: 30px 0;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #565e49;
@@ -527,6 +543,7 @@ section {
   padding-bottom: 15px;
   background: #fff;
 }
+
 .about .container {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
@@ -578,7 +595,6 @@ section {
   color: #8b9578;
 }
 
-
 .about .content h3 {
   font-weight: 700;
   font-size: 24px;
@@ -606,7 +622,7 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(#f8aa38 50%, rgba(248,170,56, 0.4) 52%);
+  background: radial-gradient(#f8aa38 50%, rgba(248, 170, 56, 0.4) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -681,6 +697,7 @@ section {
     transform: scale(0.6, 0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(1, 1);
     opacity: 0;
@@ -692,6 +709,7 @@ section {
     transform: scale(0.6, 0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(1, 1);
     opacity: 0;
@@ -787,11 +805,10 @@ section {
   margin-bottom: 0;
 }
 
-
 /*--------------------------------------------------------------
 # Work Process
 --------------------------------------------------------------*/
-.work-process .content + .content {
+.work-process .content+.content {
   margin-top: 100px;
 }
 
@@ -804,7 +821,6 @@ section {
   list-style: none;
   padding: 0;
 } */
-
 .work-process .content ul li {
   padding-bottom: 10px;
 }
@@ -1142,7 +1158,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
 }
 
@@ -1370,7 +1386,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -1434,6 +1450,7 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -1443,6 +1460,7 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -1574,7 +1592,7 @@ section {
   margin: 0;
 }
 
-.blog .entry .entry-meta ul li + li {
+.blog .entry .entry-meta ul li+li {
   padding-left: 20px;
 }
 
@@ -1691,7 +1709,7 @@ section {
   display: inline-block;
 }
 
-.blog .entry .entry-footer .tags li + li::before {
+.blog .entry .entry-footer .tags li+li::before {
   padding-right: 6px;
   color: #6c757d;
   content: ",";
@@ -1945,7 +1963,7 @@ section {
   padding: 0;
 }
 
-.blog .sidebar .categories ul li + li {
+.blog .sidebar .categories ul li+li {
   padding-top: 10px;
 }
 
@@ -1964,7 +1982,7 @@ section {
   font-size: 14px;
 }
 
-.blog .sidebar .recent-posts .post-item + .post-item {
+.blog .sidebar .recent-posts .post-item+.post-item {
   margin-top: 15px;
 }
 
