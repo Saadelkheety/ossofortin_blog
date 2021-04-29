@@ -375,7 +375,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+.btn-get-started {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 13px;
@@ -387,11 +387,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px;
   border: 2px solid #f8aa38;
   text-transform: uppercase;
-  color: #fff;
+  color: #444;
 }
 
-#hero .btn-get-started:hover {
+.btn-get-started:hover {
   background: #f8aa38;
+  color: #fff;
 }
 
 .carousel-caption {
