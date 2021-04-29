@@ -12,7 +12,7 @@ body {
   color: #444444;
 }
 
-thead, tbody {
+thead,td {
   border-width: 1px;
   padding: 5px;
   margin: 1px;
