@@ -5,7 +5,8 @@ from django import forms
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 from wagtail.core.models import Page
-from wagtail.core.fields import RichTextField
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.contrib.table_block.blocks import TableBlock
 from wagtail.core import blocks
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel
 from wagtail.images.blocks import ImageChooserBlock
@@ -100,7 +101,12 @@ class BlogIndexPage(RoutablePageMixin, Page):
 
 #
 class PostPage(Page):
-    body = RichTextField(blank=True)
+    body = StreamField([
+        ('heading', blocks.CharBlock(form_classname="full title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('table', TableBlock()),
+    ], blank=True)
     description = models.CharField(max_length=255, blank=True,)
     date = models.DateTimeField(
         verbose_name="Post date", default=datetime.datetime.today)
@@ -125,7 +131,7 @@ class PostPage(Page):
                 FieldPanel('categories', widget=forms.CheckboxSelectMultiple),
             ], heading="Post information"),
         ImageChooserPanel('header_image'),
-        FieldPanel('body', classname="full"),
+        StreamFieldPanel('body'),
         FieldPanel('description', classname="full"),
         # InlinePanel('gallery_images', label="Gallery images"),
     ]
